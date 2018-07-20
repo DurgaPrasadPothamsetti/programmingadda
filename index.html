@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+
+    <title>Programming Adda</title>
+    <style>
+        .font {
+            font-family: 'Cedarville Cursive', cursive;
+            height: 50px;
+        }
+    .intro{
+        background-color: rgb(255, 255, 255);
+    }
+        .slideshow {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            margin: 0;
+            padding: 0;
+        }
+
+        @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        section {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        section::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            content: '';
+            width: 100%;
+            height: 80%;
+            background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .8) 80%, rgba(0, 0, 0, .8) 100%);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .8) 80%, rgba(0, 0, 0, .8) 100%);
+        }
+
+        section h1 {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            z-index: 2;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 450%;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+
+        #section05 {
+            background: url(http://footage.framepool.com/shotimg/qf/814812046-binary-number-code-coding-mathematics.jpg) center center / cover no-repeat;
+        }
+
+
+
+        .demo a {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            z-index: 2;
+            display: inline-block;
+            -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+            color: #fff;
+            font: normal 400 20px/1 'Josefin Sans', sans-serif;
+            letter-spacing: .1em;
+            text-decoration: none;
+            transition: opacity .3s;
+        }
+
+        .demo a:hover {
+            opacity: .5;
+        }
+
+
+        #section05 a {
+            padding-top: 70px;
+        }
+
+        #section05 a span {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            margin-left: -12px;
+            border-left: 5px solid #fff;
+            border-bottom: 5px solid #fff;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-animation: sdb05 1.5s infinite;
+            animation: sdb05 1.5s infinite;
+            box-sizing: border-box;
+        }
+
+        @-webkit-keyframes sdb05 {
+            0% {
+                -webkit-transform: rotate(-45deg) translate(0, 0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes sdb05 {
+            0% {
+                transform: rotate(-45deg) translate(0, 0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(-45deg) translate(-20px, 20px);
+                opacity: 0;
+            }
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #111;
+            color: white;
+        }
+
+
+
+
+        .flip-container {
+            -webkit-perspective: 1000;
+            -moz-perspective: 1000;
+            -o-perspective: 1000;
+            perspective: 1000;
+
+            border: 1px solid #ccc;
+        }
+
+        .flip-container:hover .flipper,
+        .flip-container.hover .flipper {
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+
+        .front {
+            width: 1cm;
+            height: 2cm;
+        }
+
+        .flip-container,
+        .front,
+        .back {
+            width: 335px;
+            height: 427px;
+            float: left;
+        }
+
+        .flipper {
+            -webkit-transition: 0.6s;
+            -webkit-transform-style: preserve-3d;
+
+            -moz-transition: 0.6s;
+            -moz-transform-style: preserve-3d;
+
+            -o-transition: 0.6s;
+            -o-transform-style: preserve-3d;
+
+            transition: 0.6s;
+            transform-style: preserve-3d;
+
+            position: relative;
+        }
+
+        .front,
+        .back {
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            backface-visibility: hidden;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .front {
+            background: 0 0 no-repeat;
+            z-index: 2;
+            margin: 2cm;
+            margin-left: 2cm;
+        }
+
+        .back {
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+
+            background: #f8f8f8;
+        }
+
+        .front .name {
+            font-size: 2em;
+            display: inline-block;
+            background: rgba(33, 33, 33, 0.9);
+            color: #f8f8f8;
+            font-family: Courier;
+            padding: 5px 10px;
+            border-radius: 5px;
+            bottom: 60px;
+            left: 25%;
+            position: absolute;
+            text-shadow: 0.1em 0.1em 0.05em #333;
+
+            -webkit-transform: rotate(-20deg);
+            -moz-transform: rotate(-20deg);
+            -o-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+        }
+
+        .back-logo {
+            position: absolute;
+            top: 40px;
+            left: 90px;
+            width: 160px;
+            height: 117px;
+            background: url(http://davidwalsh.name/demo/logo.png) 0 0 no-repeat;
+        }
+
+        .back-title {
+            font-weight: bold;
+            color: #00304a;
+            position: absolute;
+            top: 180px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            text-shadow: 0.1em 0.1em 0.05em #acd7e5;
+            font-family: Courier;
+            font-size: 2em;
+        }
+
+        .back p {
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 0 20px;
+            font-family: arial;
+            line-height: 2em;
+        }
+        a{
+            text-decoration: none;
+            cursor: pointer;
+        }
+        a:hover {
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .container {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: rgb(48, 47, 88);
+            height: 300;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+          
+        }
+
+        .ui-widget {
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: antiquewhite;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+        }
+
+        .button {
+            border-radius: 4px;
+            background-color: #ffffff;
+            border: none;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            font-size: 28px;
+            padding: 10px;
+            width: 110px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $("#click").click(function () {
+                $('html, body').animate({
+                    scrollTop: $("#lang").offset().top
+                }, 'slow');
+            });
+        });
+        $(document).ready(function () {
+            $("#contact").click(function () {
+                $('html, body').animate({
+                    scrollTop: $("#container").offset().top
+                }, 'slow');
+            });
+        });
+        $(document).ready(function () {
+            $("#languages").click(function () {
+                $('html, body').animate({
+                    scrollTop: $("#lang").offset().top
+                }, 'slow');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li>
+                <a>Home</a>
+            </li>
+            <li>
+                <a id="languages">Languages</a>
+            </li>
+            <li>
+                <a id="contact">Contact</a>
+            </li>
+            <li>
+                <a>About</a>
+            </li>
+        </ul>
+    </div>
+
+    <section id="section05" class="demo">
+        <h1>Programming Adda</h1>
+        <a id="click">
+            <span></span></a>
+    </section>
+    </section>
+    <div class="intro">
+        <center>
+            <h1 style="font-size:70px;color: #111">
+                <a href="https://en.wikipedia.org/wiki/Programming" target="_blank" style="color: steelblue;">
+                    < Programming />
+                </a> Is Love</h1>
+            <br>
+            <h3>Check Out Few Programming Languages Below!!</h3>
+            <br>
+        </center>
+    </div>
+    <div id="lang">
+        <div class="flip-container" >
+            <div class="flipper">
+                <div style="padding: 0;margin: 0;" class="front">
+                    <img src="images/c.jpg">
+                </div>
+                <div class="back">
+                    <div class="back-logo"></div>
+                    <div class="back-title">@Programming Blog</div>
+                    <p>To Know About This Language
+                        <a href="https://en.wikipedia.org/wiki/C_(programming_language" target="_blank">Click Here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-container" >
+            <div class="flipper">
+                <div style="padding: 0;margin: 0;" class="front">
+                    <img src="images/C++.jpg">
+                </div>
+                <div class="back">
+                    <div class="back-logo"></div>
+                    <div class="back-title">@Programming Blog</div>
+                    <p>To Know About This Language
+                        <a href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank">Click Here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-container" >
+            <div class="flipper">
+                <div style="padding: 0;margin: 0;" class="front">
+                    <img src="images/java.jpg">
+                </div>
+                <div class="back">
+                    <div class="back-logo"></div>
+                    <div class="back-title">@Programming Blog</div>
+                    <p>To Know About This Language
+                        <a href="https://en.wikipedia.org/wiki/Java" target="_blank">Click Here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-container" >
+            <div class="flipper">
+                <div style="padding: 0;margin: 0;" class="front">
+                    <img src="images/python.jpg">
+                </div>
+                <div class="back">
+                    <div class="back-logo"></div>
+                    <div class="back-title">@Programming Blog</div>
+                    <p>To Know About This Language
+                        <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">Click Here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-container" >
+            <div class="flipper">
+                <div style="padding: 0;margin: 0;" class="front">
+                    <img src="images/perl.jpg">
+                </div>
+                <div class="back">
+                    <div class="back-logo"></div>
+                    <div class="back-title">@Programming Blog</div>
+                    <p>To Know About This Language
+                        <a href="https://en.wikipedia.org/wiki/perl" target="_blank">Click Here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-container" >
+            <div class="flipper">
+                <div style="padding: 0;margin: 0;" class="front">
+                    <img src="images/ruby.jpg">
+                </div>
+                <div class="back">
+                    <div class="back-logo"></div>
+                    <div class="back-title">@Programming Blog</div>
+                    <p>To Know About This Language
+                        <a href="https://en.wikipedia.org/wiki/Ruby_(programming_language)" target="_blank">Click Here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-container" >
+            <div class="flipper">
+                <div style="padding: 0;margin: 0;" class="front">
+                    <img src="images/csharp.jpg">
+                </div>
+                <div class="back">
+                    <div class="back-logo"></div>
+                    <div class="back-title">@Programming Blog</div>
+                    <p>To Know About This Language
+                        <a href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)" target="_blank">Click Here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-container" >
+            <div class="flipper">
+                <div style="padding: 0;margin: 0;" class="front">
+                    <img src="images/php.jpg">
+                </div>
+                <div class="back">
+                    <div class="back-logo"></div>
+                    <div class="back-title">@Programming Blog</div>
+                    <p>To Know About This Language
+                        <a href="https://en.wikipedia.org/wiki/PHP" target="_blank">Click Here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dynamic">
+        <img style="width: 100%;height: 220;" src="images/keyboard.jpg">
+
+
+    </div>
+    <div class="container" id="container">
+        <center>
+            <h1>Fill Your Details</h1>
+            <form action="datasave.php" method="POST">
+                <div class="ui-widget">
+
+                    <input id="names" name="name" placeholder="Your Name" />
+                </div>
+
+                <div class="ui-widget">
+
+                    <input id="city" name="city" placeholder="Your City" />
+                </div>
+                <div class="ui-widget">
+
+                    <input id="countries" name="address" placeholder="Your Address" />
+                </div>
+                <div class="ui-widget">
+
+                    <input id="email" name="email" placeholder="Your Email" />
+                </div>
+                <button class="button" type="submit">Submit</button>
+            </form>
+        </center>
+    </div>
+</body>
+<script type="text/javascript">
+    $(function () {
+        var nameTags = [
+            'Durga Reddy',
+            "Bhavya",
+            "Manikanta",
+            "Nagi"
+        ];
+        var cityTags = [
+            "Hyderabad",
+            "Mumbai",
+            "Chennai"
+        ];
+        var countryTags = [
+            "Hyderabad",
+            "Mumbai",
+            "Chennai"
+        ];
+        $("#names").autocomplete({
+            source: nameTags
+        });
+        $("#countries").autocomplete({
+            source: countryTags
+        });
+        $("#city").autocomplete({
+            source: cityTags
+        });
+    });
+</script>
+<script>$(function () {
+        $('a[href*=#]').on('click', function (e) {
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top }, 500, 'linear');
+        });
+    });
+</script>
+</html>
